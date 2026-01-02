@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shift Cargo Service Ltd.</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/png" href="../images/logo.png" />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- icon CDN -->
+    <script
+      src="https://kit.fontawesome.com/6cb37575c0.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--Tailwind CDN  -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- colors -->
+  </head>
+  <body class="roboto">
+    <header
+      class="bg-[url('../images/about.png')] header2 object-top bg-cover h-full relative"
+    >
+      <nav id="navbar"
+        class="flex fixed top-0 left-0 right-0 z-50 bg-black/10 justify-between items-center px-[7%] py-3 backdrop-blur-xl"
+      >
+       <!--Logo  -->
+        <div>
+          <a href="../index.html">
+            <img
+              class="h-[60px] cursor-pointer"
+              src="../images/logo.png"
+              alt="Logo"
+            />
+          </a>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden lg:block">
+          <ul
+            class="flex justify-between items-center gap-6 text-white font-medium text-lg"
+          >
+            <li>
+              <a class="hover:text-[#89CE14]" href="../index.html">Home</a>
+            </li>
+            <li>
+              <a class="hover:text-[#89CE14]" href="services.html">Services</a>
+            </li>
+            <li>
+              <a class="hover:text-[#89CE14]" href="about.html">About us</a>
+            </li>
+            <li><a class="hover:text-[#89CE14]" href="reat.html">Rates</a></li>
+            <li>
+              <a class="hover:text-[#89CE14]" href="cost.html"
+                >Cost Calculator</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-[#89CE14]" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <!-- Mobile Menu Icon -->
+        <div class="md:hidden">
+          <i
+            id="menu-icon"
+            class="fa-solid text-white text-3xl fa-bars cursor-pointer"
+          ></i>
+        </div>
+        <!-- Sign In/Sign Up Buttons for Desktop -->
+        <div class="hidden md:flex justify-between gap-3">
+          <button class="button bg" onclick="my_modal_4.showModal()">
+            Sign Up
+          </button>
+          <button
+            onclick="my_modal_3.showModal()"
+            class="bg-transparent button text hover-btn duration-500"
+          >
+            Sign In
+          </button>
+        </div>
+      </nav>
+      <!-- Sign up / sign in modal -->
+      <dialog id="my_modal_3" class="modal">
+        <div class="modal-box">
+          <form method="dialog" class="relative">
+            <button
+              class="text-2xl font-bold absolute -right-2 p-2 px-3.5 cursor-pointer border-transparent border rounded-full hover:border-[#46C0A2] hover:text-white hover-btn duration-500 -top-3"
+            >
+              ✕
+            </button>
+          </form>
+          <div>
+            <h1 class="text-center text-4xl font-bold text-[#333333]">
+              Log In
+            </h1>
+            <p class="text-xl text-[#606060] text-center">
+              Don't have an account?
+              <a href="#"
+                ><span class="text-[#46C0A2] hover:underline">Sign up</span></a
+              >
+            </p>
+            <form action="#">
+              <div>
+                <label
+                  for="login-email"
+                  class="text-lg text-[#7B7B7B] py-2 block"
+                  >Email address or user name</label
+                >
+                <input
+                  id="login-email"
+                  class="w-full px-5 py-4 rounded-2xl outline-none border border-[#22bf98]"
+                  type="text"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="login-password"
+                  class="text-lg text-[#7B7B7B] py-2 block"
+                  >Password</label
+                >
+                <input
+                  id="login-password"
+                  class="w-full px-5 py-4 rounded-2xl outline-none border border-[#22bf98]"
+                  type="password"
+                  required
+                />
+              </div>
+              <div>
+                <div class="flex justify-between items-center mt-2">
+                  <div class="flex gap-2 items-center">
+                    <input
+                      type="checkbox"
+                      id="remember-me"
+                      class="h-4 w-4"
+                      required
+                    />
+                    <label
+                      for="remember-me"
+                      class="md:text-lg text-sm text-[#7B7B7B]"
+                      >Remember me</label
+                    >
+                  </div>
+                  <a
+                    href="#"
+                    class="md:text-lg hidden md:block text-sm py-2 text-[#46C0A2] hover:underline cursor-pointer"
+                    >Forgot your password?</a
+                  >
+                </div>
+                <div class="flex justify-center items-center mt-3 md:mt-6">
+                  <button
+                    id="login"
+                    type="submit"
+                    class="py-4 bg rounded-2xl text-white font-semibold text-xl w-full cursor-pointer bg-[#46C0A2] hover:bg-[#3aa98b]"
+                  >
+                    Log In
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </dialog>
+      <!-- Sign in Form -->
+      <dialog id="my_modal_4" class="modal">
+        <div class="modal-box">
+          <form method="dialog">
+            <button
+              class="text-2xl font-bold absolute right-4 p-2 px-3.5 cursor-pointer border-transparent border rounded-full hover:border-[#46C0A2] hover:text-white hover-btn duration-500 top-2"
+            >
+              ✕
+            </button>
+          </form>
+          <div>
+            <h1 class="text-center text-4xl font-bold text-[#333333]">
+              Sign Up
+            </h1>
+            <p class="text-xl text-[#606060] text-center">
+              Already have an account?
+              <a href="#"
+                ><span class="text-[#46C0A2] hover:underline">Log in</span></a
+              >
+            </p>
+            <form action="#">
+              <div>
+                <label
+                  for="signup-name"
+                  class="text-lg text-[#7B7B7B] py-2 block"
+                  >Your Name</label
+                >
+                <input
+                  id="signup-name"
+                  class="w-full px-5 py-4 rounded-2xl outline-none border border-[#22bf98]"
+                  type="text"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="signup-email"
+                  class="text-lg text-[#7B7B7B] py-2 block"
+                  >Your Email Address</label
+                >
+                <input
+                  id="signup-email"
+                  class="w-full px-5 py-4 rounded-2xl outline-none border border-[#22bf98]"
+                  type="email"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="signup-mobile"
+                  class="text-lg text-[#7B7B7B] py-2 block"
+                  >Mobile Number</label
+                >
+                <input
+                  id="signup-mobile"
+                  class="w-full px-5 py-4 rounded-2xl outline-none border border-[#22bf98]"
+                  type="tel"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="signup-address"
+                  class="text-lg text-[#7B7B7B] py-2 block"
+                  >Home Address</label
+                >
+                <input
+                  id="signup-address"
+                  class="w-full px-5 py-4 rounded-2xl outline-none border border-[#22bf98]"
+                  type="text"
+                />
+              </div>
+              <div>
+                <label
+                  for="signup-password"
+                  class="text-lg text-[#7B7B7B] py-2 block"
+                  >Password</label
+                >
+                <input
+                  id="signup-password"
+                  class="w-full px-5 py-4 rounded-2xl outline-none border border-[#22bf98]"
+                  type="password"
+                  required
+                />
+              </div>
+              <div class="flex justify-center items-center mt-6">
+                <button
+                  type="submit"
+                  class="py-4 bg rounded-2xl text-white font-semibold text-xl w-full cursor-pointer bg-[#46C0A2] hover:bg-[#3aa98b]"
+                >
+                  Sign Up
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </dialog>
+      <!-- Mobile Drawer Menu -->
+      <div
+        id="mobile-menu"
+        class="fixed top-0 right-[-100%] lg:hidden w-[70%] max-w-sm h-full backdrop-blur-xl bg-opacity-95 p-8 transition-all duration-500 ease-in-out z-50"
+      >
+        <i
+          id="close-icon"
+          class="fa-solid fa-xmark text-white text-3xl absolute top-5 right-6 cursor-pointer"
+        ></i>
+        <ul class="flex flex-col gap-2 text-white font-medium text-xl mt-10">
+          <li>
+            <a class="hover:text-[#89CE14] block py-2" href="../index.html"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a class="hover:text-[#89CE14] block py-2" href="services.html"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a class="hover:text-[#89CE14] block py-2" href="about.html"
+              >About us</a
+            >
+          </li>
+          <li>
+            <a class="hover:text-[#89CE14] block py-2" href="reat.html"
+              >Rates</a
+            >
+          </li>
+          <li>
+            <a class="hover:text-[#89CE14] block py-2" href="cost.html"
+              >Cost Calculator</a
+            >
+          </li>
+          <li>
+            <a class="hover:text-[#89CE14] block py-2" href="contact.html"
+              >Contact Us</a
+            >
+          </li>
+          <li class="mt-2 pt-6 border-t border-gray-700">
+            <button
+              onclick="my_modal_4.showModal()"
+              class="w-full py-3 rounded-[38px] bg-[#89CE14] text-white font-semibold"
+            >
+              Sign Up
+            </button>
+          </li>
+          <li>
+            <button
+              onclick="my_modal_3.showModal()"
+              class="w-full py-3 mt-2 rounded-[38px] border border-white text-white font-semibold"
+            >
+              Sign In
+            </button>
+          </li>
+          <li class="mt-2">
+            <img src="../images/logo.png" alt="" />
+          </li>
+        </ul>
+      </div>
+
+      <!-- Header Content -->
+      <div class="flex justify-center items-center px-[7%]">
+        <div class="py-[80%] md:py-[20%] w-[575px]">
+          <h1 class="text-center text-6xl font-bold text-white py-3">
+            About Us
+          </h1>
+          <p class="text-center text-[20px] text-white pb-6">
+            Lorem ipsum dolor sit amet consectetur. Congue lacinia tempor orci
+            tellus sollicitudin morbi. Duis massa sit
+          </p>
+        </div>
+      </div>
+
+      <!-- WhatsApp Button -->
+      <div class="absolute right-10 md:right-36 bottom-30 md:bottom-40">
+        <a
+          href="https://wa.me/8801833597831?text=Hello!%20I%20have%20a%20question."
+          target="_blank"
+        >
+          <i
+            class="fa-brands fa-whatsapp text-3xl rounded-full text-white p-4 px-4.5 border cursor-pointer hover:shadow-lg border-[#89CE14] bg-[#89CE14]"
+          ></i>
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Section Start -->
+    <main>
+      <!-- Choose section start -->
+      <section class="px-[7%] md:px-[10%] py-12 md:py-[70px] bg-[#F9FAFC]">
+        <h1 class="text-center text-[#333333] text-4xl font-bold">
+          Why Choose Us
+        </h1>
+        <p class="text-center text-[#606060] text-xl py-1">
+          Lorem ipsum dolor sit amet consectetur. Congue lacinia <br />tempor
+          orci tellus sollicitudin morbi. Duis
+        </p>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-5">
+          <div class="relative">
+            <img class="rounded-xl" src="../images/choose.png" alt="" />
+            <div class="bottom-10 -right-5 absolute">
+              <img
+                class="rounded-xl hidden lg:block"
+                src="../images/choose2.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div>
+            <div class="grid grid-cols-1 gap-6">
+              <div
+                class="flex flex-col md:flex-row items-center card1 gap-4 p-5 cursor-pointer"
+              >
+                <div>
+                  <img src="../images/packeag.svg" alt="" />
+                </div>
+                <div>
+                  <h1
+                    class="text-[#606060] font-medium text-xl py-2 text-center md:text-start"
+                  >
+                    Package Consolidation
+                  </h1>
+                  <p
+                    class="text-[#606060] text-[14px] text-center md:text-start"
+                  >
+                    Lorem ipsum dolor sit amet consectetur. Ut a donec neque
+                    mattis blandit fermentum id. Sagittis eu egestas
+                  </p>
+                </div>
+              </div>
+              <div
+                class="flex flex-col md:flex-row items-center card1 gap-4 p-5 cursor-pointer"
+              >
+                <img src="../images/security.svg" alt="" />
+                <div>
+                  <h1
+                    class="text-[#606060] font-medium text-xl py-2 text-center md:text-start"
+                  >
+                    Security & Reliability
+                  </h1>
+                  <p
+                    class="text-[#606060] text-[14px] text-center md:text-start"
+                  >
+                    Lorem ipsum dolor sit amet consectetur. Ut a donec neque
+                    mattis blandit fermentum id. Sagittis eu egestas
+                  </p>
+                </div>
+              </div>
+              <div
+                class="flex flex-col md:flex-row card1 p-5 gap-4 cursor-pointer"
+              >
+                <img
+                  class="h-12 md:h-auto"
+                  src="../images/real-time.svg"
+                  alt=""
+                />
+                <div>
+                  <h1
+                    class="text-[#606060] font-medium text-xl py-2 text-center md:text-start"
+                  >
+                    Real-time Tracking
+                  </h1>
+                  <p
+                    class="text-[#606060] text-[14px] text-center md:text-start"
+                  >
+                    Lorem ipsum dolor sit amet consectetur. Ut a donec neque
+                    mattis blandit fermentum id. Sagittis eu egestas
+                  </p>
+                </div>
+              </div>
+              <div
+                class="flex flex-col md:flex-row card1 gap-4 p-5 cursor-pointer"
+              >
+                <img
+                  class="h-12 md:h-auto"
+                  src="../images/support.svg"
+                  alt=""
+                />
+                <div>
+                  <h1
+                    class="text-[#606060] font-medium text-xl py-2 text-center md:text-start"
+                  >
+                    24/7 Support
+                  </h1>
+                  <p
+                    class="text-[#606060] text-[14px] text-center md:text-start"
+                  >
+                    Lorem ipsum dolor sit amet consectetur. Ut a donec neque
+                    mattis blandit fermentum id. Sagittis eu egestas
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Choose section end -->
+
+      <!-- Company Section Start -->
+      <section class="px-[7%] md:px-[10%] py-12 md:py-[70px]">
+        <h1 class="text-center font-bold text-4xl text-[#333333]">
+          Company Overview
+        </h1>
+        <p class="text-center text-[#606060] text-xl py-1">
+          Lorem ipsum dolor sit amet consectetur. Congue lacinia <br />tempor
+          orci tellus sollicitudin morbi. Duis
+        </p>
+        <div class="mt-5 relative">
+          <iframe
+            class="w-full h-[350px] md:h-[600px] rounded-xl"
+            src="https://www.youtube.com/embed/vHhYCUtxpoA"
+            title="Containers being loaded and unloaded off a ship in Savannah Georgia"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <div class="absolute top-0 right-0">
+            <p
+              class="text-white py-4 px-5 about-v-text bg text-base md:text-xl font-semibold"
+            >
+              More Than A Shipping Service
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Company Section end -->
+
+      <!-- Feed back section start -->
+      <section class="px-[7%] md:px-[10%] py-12 md:py-[70px] bg-[#F9FAFC]">
+        <h1 class="text-4xl text-[#333333] font-bold text-center md:text-start">
+          Our Customer Feedback
+        </h1>
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-[#606060] text-xl py-2 text-center md:text-start">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            <br />industry. Lorem Ipsum has been the industry's standard dummy
+            text ever
+          </p>
+          <div class="flex justify-between gap-4 items-center mt-4 md:mt-0">
+            <!-- Added IDs to the arrow icons -->
+            <i
+              id="feedback-prev-btn"
+              class="fa-solid fa-chevron-left arrow cursor-pointer p-2 rounded-full hover:bg-gray-200"
+            ></i>
+            <i
+              id="feedback-next-btn"
+              class="fa-solid fa-chevron-right arrow cursor-pointer p-2 rounded-full hover:bg-gray-200"
+            ></i>
+          </div>
+        </div>
+
+        <!-- Carousel Wrapper -->
+        <div class="relative mt-10 overflow-hidden">
+          <!-- Carousel Container -->
+          <div
+            id="feedback-carousel-container"
+            class="flex transition-transform duration-500 ease-in-out"
+          >
+            <!-- Feedback Card 1 -->
+            <div
+              class="feedback-carousel-item w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3"
+            >
+              <div
+                class="border bg-white rounded-lg shadow-sm border-white p-3 md:p-6 hover:shadow-xl h-full"
+              >
+                <div class="flex justify-between">
+                  <img
+                    class="rounded-full"
+                    src="../images/customer1.png"
+                    alt="Customer 1"
+                  />
+                  <div>
+                    <i class="fa-solid fa-star text-[#89CE14] text-2xl"></i>
+                    <i class="fa-solid fa-star text-[#89CE14] text-2xl"></i>
+                    <i class="fa-solid fa-star text-[#89CE14] text-2xl"></i>
+                    <i
+                      class="fa-solid fa-star-half-stroke text-[#89CE14] text-2xl"
+                    ></i>
+                    <i
+                      class="fa-solid fa-star-half-stroke text-[#89CE14] text-2xl"
+                    ></i>
+                  </div>
+                </div>
+                <p class="py-3 text-2xl font-semibold text-[#555555]">
+                  Floyd Miles
+                </p>
+                <p class="text-lg text-[#606060]">
+                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                  amet sint. Velit officia consequat duis enim velit mollit.
+                </p>
+              </div>
+            </div>
+
+            <!-- Feedback Card 2 -->
+            <div
+              class="feedback-carousel-item w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3"
+            >
+              <div
+                class="border bg-white rounded-lg shadow-sm border-white p-3 md:p-6 hover:shadow-xl h-full"
+              >
+                <div class="flex justify-between">
+                  <img
+                    class="rounded-full"
+                    src="../images/customer2.png"
+                    alt="Customer 2"
+                  />
+                  <div>
+                    <i class="fa-solid fa-star text-[#89CE14] text-2xl"></i>
+                    <i class="fa-solid fa-star text-[#89CE14] text-2xl"></i>
+                    <i class="fa-solid fa-star text-[#89CE14] text-2xl"></i>
+                    <i
+                      class="fa-solid fa-star-half-stroke text-[#89CE14] text-2xl"
+                    ></i>
+                    <i
+                      class="fa-solid fa-star-half-stroke text-[#89CE14] text-2xl"
+                    ></i>
+                  </div>
+                </div>
+                <p class="py-3 text-2xl font-semibold text-[#555555]">
+                  Ronald Richards
+                </p>
+                <p class="text-lg text-[#606060]">
+                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                  amet sint. Velit officia consequat duis enim velit mollit.
+                </p>
+              </div>
+            </div>
+
+            <!-- Feedback Card 3 -->
+            <div
+              class="feedback-carousel-item w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3"
+            >
+              <div
+                class="border bg-white rounded-lg shadow-sm border-white p-3 md:p-6 hover:shadow-xl h-full"
+              >
+                <div class="flex justify-between">
+                  <img
+                    class="rounded-full"
+                    src="../images/customer3.png"
+                    alt="Customer 3"
+                  />
+                  <div>
+                    <i class="fa-solid fa-star text-[#89CE14] text-2xl"></i>
+                    <i class="fa-solid fa-star text-[#89CE14] text-2xl"></i>
+                    <i class="fa-solid fa-star text-[#89CE14] text-2xl"></i>
+                    <i
+                      class="fa-solid fa-star-half-stroke text-[#89CE14] text-2xl"
+                    ></i>
+                    <i
+                      class="fa-solid fa-star-half-stroke text-[#89CE14] text-2xl"
+                    ></i>
+                  </div>
+                </div>
+                <p class="py-3 text-2xl font-semibold text-[#555555]">
+                  Savannah Nguyen
+                </p>
+                <p class="text-lg text-[#606060]">
+                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                  amet sint. Velit officia consequat duis enim velit mollit.
+                </p>
+              </div>
+            </div>
+            <!-- FeedBack Card 4 -->
+            <div
+              class="feedback-carousel-item w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3"
+            >
+              <div
+                class="border bg-white rounded-lg shadow-sm border-white p-3 md:p-6 hover:shadow-xl h-full"
+              >
+                <div class="flex justify-between">
+                  <img
+                    class="rounded-full h-16 w-16"
+                    src="../images/user-2.png"
+                    alt="Customer 3"
+                  />
+                  <div>
+                    <i class="fa-solid fa-star text-[#89CE14] text-2xl"></i>
+                    <i class="fa-solid fa-star text-[#89CE14] text-2xl"></i>
+                    <i class="fa-solid fa-star text-[#89CE14] text-2xl"></i>
+                    <i
+                      class="fa-solid fa-star-half-stroke text-[#89CE14] text-2xl"
+                    ></i>
+                    <i
+                      class="fa-solid fa-star-half-stroke text-[#89CE14] text-2xl"
+                    ></i>
+                  </div>
+                </div>
+                <p class="py-3 text-2xl font-semibold text-[#555555]">
+                  Nobodip debnath
+                </p>
+                <p class="text-lg text-[#606060]">
+                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                  amet sint. Velit officia consequat duis enim velit mollit.
+                </p>
+              </div>
+            </div>
+            <!-- Feedback card 5 -->
+            <div
+              class="feedback-carousel-item w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3"
+            >
+              <div
+                class="border bg-white rounded-lg shadow-sm border-white p-3 md:p-6 hover:shadow-xl h-full"
+              >
+                <div class="flex justify-between">
+                  <img
+                    class="rounded-full h-16 w-16"
+                    src="../images/user-3.jpg"
+                    alt="Customer 3"
+                  />
+                  <div>
+                    <i class="fa-solid fa-star text-[#89CE14] text-2xl"></i>
+                    <i class="fa-solid fa-star text-[#89CE14] text-2xl"></i>
+                    <i class="fa-solid fa-star text-[#89CE14] text-2xl"></i>
+                    <i
+                      class="fa-solid fa-star-half-stroke text-[#89CE14] text-2xl"
+                    ></i>
+                    <i
+                      class="fa-solid fa-star-half-stroke text-[#89CE14] text-2xl"
+                    ></i>
+                  </div>
+                </div>
+                <p class="py-3 text-2xl font-semibold text-[#555555]">
+                  Nifat Uzzjaman
+                </p>
+                <p class="text-lg text-[#606060]">
+                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                  amet sint. Velit officia consequat duis enim velit mollit.
+                </p>
+              </div>
+            </div>
+            <!-- card-6 -->
+            <div
+              class="feedback-carousel-item w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3"
+            >
+              <div
+                class="border bg-white rounded-lg shadow-sm border-white p-3 md:p-6 hover:shadow-xl h-full"
+              >
+                <div class="flex justify-between">
+                  <img
+                    class="rounded-full h-16 w-16"
+                    src="../images/user-4.jpg"
+                    alt="Customer 3"
+                  />
+                  <div>
+                    <i class="fa-solid fa-star text-[#89CE14] text-2xl"></i>
+                    <i class="fa-solid fa-star text-[#89CE14] text-2xl"></i>
+                    <i class="fa-solid fa-star text-[#89CE14] text-2xl"></i>
+                    <i
+                      class="fa-solid fa-star-half-stroke text-[#89CE14] text-2xl"
+                    ></i>
+                    <i
+                      class="fa-solid fa-star-half-stroke text-[#89CE14] text-2xl"
+                    ></i>
+                  </div>
+                </div>
+                <p class="py-3 text-2xl font-semibold text-[#555555]">
+                  Rana Islam
+                </p>
+                <p class="text-lg text-[#606060]">
+                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                  amet sint. Velit officia consequat duis enim velit mollit.
+                </p>
+              </div>
+            </div>
+            <!-- Card 7 -->
+            <div
+              class="feedback-carousel-item w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3"
+            >
+              <div
+                class="border bg-white rounded-lg shadow-sm border-white p-3 md:p-6 hover:shadow-xl h-full"
+              >
+                <div class="flex justify-between">
+                  <img
+                    class="rounded-full h-16 w-16"
+                    src="../images/user-5.jpg"
+                    alt="Customer 3"
+                  />
+                  <div>
+                    <i class="fa-solid fa-star text-[#89CE14] text-2xl"></i>
+                    <i class="fa-solid fa-star text-[#89CE14] text-2xl"></i>
+                    <i class="fa-solid fa-star text-[#89CE14] text-2xl"></i>
+                    <i
+                      class="fa-solid fa-star-half-stroke text-[#89CE14] text-2xl"
+                    ></i>
+                    <i
+                      class="fa-solid fa-star-half-stroke text-[#89CE14] text-2xl"
+                    ></i>
+                  </div>
+                </div>
+                <p class="py-3 text-2xl font-semibold text-[#555555]">
+                  Masud Rana
+                </p>
+                <p class="text-lg text-[#606060]">
+                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                  amet sint. Velit officia consequat duis enim velit mollit.
+                </p>
+              </div>
+            </div>
+            <!-- Card 8 -->
+            <div
+              class="feedback-carousel-item w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3"
+            >
+              <div
+                class="border bg-white rounded-lg shadow-sm border-white p-3 md:p-6 hover:shadow-xl h-full"
+              >
+                <div class="flex justify-between">
+                  <img
+                    class="rounded-full h-16 w-16"
+                    src="../images/anu.jpg"
+                    alt="Customer 3"
+                  />
+                  <div>
+                    <i class="fa-solid fa-star text-[#89CE14] text-2xl"></i>
+                    <i class="fa-solid fa-star text-[#89CE14] text-2xl"></i>
+                    <i class="fa-solid fa-star text-[#89CE14] text-2xl"></i>
+                    <i
+                      class="fa-solid fa-star-half-stroke text-[#89CE14] text-2xl"
+                    ></i>
+                    <i
+                      class="fa-solid fa-star-half-stroke text-[#89CE14] text-2xl"
+                    ></i>
+                  </div>
+                </div>
+                <p class="py-3 text-2xl font-semibold text-[#555555]">
+                  Angel Susmita Mohonto
+                </p>
+                <p class="text-lg text-[#606060]">
+                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                  amet sint. Velit officia consequat duis enim velit mollit.
+                </p>
+              </div>
+            </div>
+
+            <!-- Add more feedback cards here if needed -->
+          </div>
+        </div>
+      </section>
+      <!-- Feed back section end -->
+
+      <!-- Blog section start -->
+      <section class="px-[7%] md:px-[10%] py-12 md:py-[70px]">
+        <h1 class="text-4xl text-[#333333] font-bold text-center md:text-start">
+          Our Blog
+        </h1>
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-xl text-[#606060] mt-2 text-center md:text-start">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has <br />
+            been the industry's standard dummy text ever since the 1500s
+          </p>
+          <a href="blog.html"
+            ><button
+              class="bg-transparent mt-8 md:mt-0 button text hover-btn duration-500"
+            >
+              view all
+            </button></a
+          >
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+          <div class="shadow-lg rounded-xl relative">
+            <img class="rounded-t-xl" src="../images/blog1.jpg" alt="" />
+            <div class="p-5">
+              <h1 class="text-center text-[#555555] text-2xl font-bold py-3">
+                Initial Consultation
+              </h1>
+              <p class="text-[#606060] text-[16px] text-center pb-[50px]">
+                Schedule a meeting with our experienced legal team to discuss
+                your case and understand your needs.
+              </p>
+            </div>
+            <div
+              class="flex justify-center items-center absolute -bottom-7 right-[25%] md:right-[33%]"
+            >
+              <a href="blog-detales.html"
+                ><button
+                  class="py-3 md:px-10 px-5 text-white bg rounded-lg text-xl font-semibold hover:shadow-lg cursor-pointer"
+                >
+                  Read More
+                </button></a
+              >
+            </div>
+          </div>
+          <div class="shadow-lg rounded-xl relative mt-10 md:mt-0">
+            <img class="rounded-t-xl" src="../images/blog2.jpg" alt="" />
+            <div class="p-5">
+              <h1 class="text-center text-[#555555] text-2xl font-bold py-3">
+                Initial Consultation
+              </h1>
+              <p class="text-[#606060] text-[16px] text-center pb-[50px]">
+                Schedule a meeting with our experienced legal team to discuss
+                your case and understand your needs.
+              </p>
+            </div>
+            <div
+              class="flex justify-center items-center absolute -bottom-7 right-[25%] mdright-[33%]"
+            >
+              <a href="blog-detales.html">
+                <button
+                  class="py-3 md:px-10 px-5 text-white bg rounded-lg text-xl hover:shadow-lg font-semibold cursor-pointer"
+                >
+                  Read More
+                </button></a
+              >
+            </div>
+          </div>
+          <div class="shadow-lg rounded-xl relative mt-10 md:mt-0">
+            <img class="rounded-t-xl" src="../images/blog3.jpg" alt="" />
+            <div class="p-5">
+              <h1 class="text-center text-[#555555] text-2xl font-bold py-3">
+                Initial Consultation
+              </h1>
+              <p class="text-[#606060] text-[16px] text-center pb-[50px]">
+                Schedule a meeting with our experienced legal team to discuss
+                your case and understand your needs.
+              </p>
+            </div>
+            <div
+              class="flex justify-center items-center absolute -bottom-7 right-[25%] md:right-[33%]"
+            >
+              <a href="blog-detales.html"
+                ><button
+                  class="py-3 hover:shadow-lg px-5 md:px-10 text-white bg rounded-lg text-xl font-semibold cursor-pointer"
+                >
+                  Read More
+                </button></a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Blog section end -->
+    </main>
+    <!-- Main Section End -->
+    <!-- Footer -->
+    <footer
+      class="px-[10%] py-12 md:py-[70px] last-btn mt-5 gap-8 flex flex-col lg:flex-row justify-between"
+    >
+      <div>
+        <div class="flex justify-center md:justify-start">
+          <img class="h-[80px] w-auto" src="../images/logo.png" alt="" />
+        </div>
+        <p
+          class="md:w-[350px] text-white pt-2 text-lg text-center md:text-start"
+        >
+          Lorem ipsum dolor sit amet consectetur. Neque consequat tristique
+          bibendum facilisis odio congue enim. Tempor justo proin faucibus
+          praesent ac. Dui nunc sit aliquam eget adipiscing feugiat turpis. Ut
+          eleifend blandit suspendisse sollicitudin amet dictum mauris.
+        </p>
+      </div>
+      <div>
+        <h1
+          class="text-2xl font-bold bg-text text-transparent text-center md:text-start"
+        >
+          Support
+        </h1>
+        <ul class="flex mt-5 text-lg text-white justify-between flex-col gap-3">
+          <a class="text-center md:text-start hover:underline" href="404.html"
+            ><li>FAQ</li></a
+          >
+          <a class="text-center md:text-start hover:underline" href="404.html"
+            ><li>return & Exchange</li></a
+          >
+          <a class="text-center md:text-start hover:underline" href="reat.html"
+            ><li>Shipping</li></a
+          >
+          <a
+            class="text-center md:text-start hover:underline"
+            href="benifit.html"
+            ><li>Brand</li></a
+          >
+          <a class="text-center md:text-start hover:underline" href="404.html"
+            ><li>Review</li></a
+          >
+          <a class="text-center md:text-start hover:underline" href="404.html"
+            ><li>Help</li></a
+          >
+        </ul>
+      </div>
+      <div>
+        <h1
+          class="text-2xl font-bold bg-text text-transparent text-center md:text-start"
+        >
+          Company
+        </h1>
+        <ul class="flex mt-5 text-lg text-white justify-between flex-col gap-3">
+          <a
+            class="text-center md:text-start hover:underline"
+            href="services.html"
+            ><li>Services</li></a
+          >
+          <a
+            class="text-center md:text-start hover:underline"
+            href="resticate.html"
+            ><li>Restricter Items</li></a
+          >
+          <a class="text-center md:text-start hover:underline" href="404.html"
+            ><li>Terms & Conditions</li></a
+          >
+          <a class="text-center md:text-start hover:underline" href="404.html"
+            ><li>Privacy Policy</li></a
+          >
+          <a class="text-center md:text-start hover:underline" href="blog.html"
+            ><li>Blog</li></a
+          >
+          <a
+            class="text-center md:text-start hover:underline"
+            href="contact.html"
+            ><li>Contact Us</li></a
+          >
+        </ul>
+      </div>
+      <div>
+        <h1
+          class="text-2xl font-bold bg-text text-transparent text-center md:text-start"
+        >
+          Join a Newsletter
+        </h1>
+        <p class="mt-5 text-lg text-white text-center md:text-start">
+          Your Email
+        </p>
+        <div class="flex justify-between items-center relative my-4">
+          <input
+            required
+            type="text"
+            class="py-5 w-[350px] border border-[#89CE14] placeholder:text-[#89CE14] rounded-[38px] px-5 bg-white outline-none"
+            placeholder="Enter Your Email"
+            name="email"
+            id=""
+          />
+          <button type="submit" class="absolute button bg right-1">
+            Subscrube
+          </button>
+        </div>
+        <div class="flex justify-center md:justify-start gap-6">
+          <a
+            href="https://www.facebook.com/profile.php?id=61554300737206"
+            target="_blank"
+            ><i
+              class="fa-brands fa-facebook-f px-4 cursor-pointer hover:bg-[#89CE14] duration-500 p-3 border-[#89CE14] text-white text-2xl border rounded-full"
+            ></i
+          ></a>
+          <a href="https://www.instagram.com/debnathnobodip/" target="_blank"
+            ><i
+              class="fa-brands fa-instagram cursor-pointer hover:bg-[#89CE14] duration-500 p-3 border-[#89CE14] text-white text-2xl border rounded-full"
+            ></i
+          ></a>
+          <a href="https://x.com/DebnathD46507" target="_blank"
+            ><i
+              class="fa-brands fa-twitter cursor-pointer hover:bg-[#89CE14] duration-500 p-3 border-[#89CE14] text-white text-2xl border rounded-full"
+            ></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer -->
+  </body>
+  <script src="../script/script.js"></script>
+  <script src="../script/login.js"></script>
+</html>

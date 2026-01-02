@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swift Cargo Service Ltd.</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/png" href="../images/logo.png" />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- icon CDN -->
+    <script
+      src="https://kit.fontawesome.com/6cb37575c0.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--Tailwind CDN  -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- colors -->
+  </head>
+  <body class="roboto">
+    <header
+      class="bg-[url('../images/reat.png')] bg-center bg-cover header relative"
+    >
+      <nav id="navbar"
+        class="flex fixed top-0 left-0 right-0 z-50 bg-black/10 justify-between items-center px-[7%] py-3 backdrop-blur-xl"
+      >
+      <!-- Logo -->
+        <div>
+          <a href="../index.html"
+            ><img
+              class="h-[60px] cursor-pointer"
+              src="../images/logo.png"
+              alt=""
+          /></a>
+        </div>
+        <!-- Mobile Menu bar -->
+        <div class="md:hidden">
+          <i id="menu-icon" class="fa-solid text-white text-3xl fa-bars"></i>
+        </div>
+        <!-- Desktop Menu -->
+        <div class="hidden lg:block">
+          <ul
+            class="flex justify-between items-center gap-6 text-white font-medium text-lg"
+          >
+            <a class="hover:text-[#89CE14]" href="../index.html"
+              ><li>Home</li></a
+            >
+            <a class="hover:text-[#89CE14]" href="services.html"
+              ><li>Services</li></a
+            >
+            <a class="hover:text-[#89CE14]" href="about.html"
+              ><li>About us</li></a
+            >
+            <a class="hover:text-[#89CE14]" href="reat.html"><li>Rates</li></a>
+            <a class="hover:text-[#89CE14]" href="cost.html"
+              ><li>Cost Calculator</li></a
+            >
+            <a class="hover:text-[#89CE14]" href="contact.html"
+              ><li>Contact us</li></a
+            >
+          </ul>
+        </div>
+        <!-- Sign up / sign in button -->
+        <div class="hidden md:block">
+          <div class="flex justify-between gap-3">
+            <button class="button bg" onclick="my_modal_4.showModal()">
+              Sign Up
+            </button>
+            <button
+              onclick="my_modal_3.showModal()"
+              class="bg-transparent button text hover-btn duration-500"
+            >
+              Sign In
+            </button>
+          </div>
+        </div>
+      </nav>
+      <!-- sign in / sign up form -->
+      <dialog id="my_modal_3" class="modal">
+        <div class="modal-box">
+          <form method="dialog" class="relative">
+            <button
+              class="text-2xl font-bold absolute -right-2 p-2 px-3.5 cursor-pointer border-transparent border rounded-full hover:border-[#46C0A2] hover:text-white hover-btn duration-500 -top-3"
+            >
+              ✕
+            </button>
+          </form>
+          <div>
+            <h1 class="text-center text-4xl font-bold text-[#333333]">
+              Log In
+            </h1>
+            <p class="text-xl text-[#606060] text-center">
+              Don't have an account?
+              <a href="#"
+                ><span class="text-[#46C0A2] hover:underline">Sign up</span></a
+              >
+            </p>
+            <form action="#">
+              <div>
+                <label
+                  for="login-email"
+                  class="text-lg text-[#7B7B7B] py-2 block"
+                  >Email address or user name</label
+                >
+                <input
+                  id="login-email"
+                  class="w-full px-5 py-4 rounded-2xl outline-none border border-[#22bf98]"
+                  type="text"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="login-password"
+                  class="text-lg text-[#7B7B7B] py-2 block"
+                  >Password</label
+                >
+                <input
+                  id="login-password"
+                  class="w-full px-5 py-4 rounded-2xl outline-none border border-[#22bf98]"
+                  type="password"
+                  required
+                />
+              </div>
+              <div>
+                <div class="flex justify-between items-center mt-2">
+                  <div class="flex gap-2 items-center">
+                    <input
+                      type="checkbox"
+                      id="remember-me"
+                      class="h-4 w-4"
+                      required
+                    />
+                    <label
+                      for="remember-me"
+                      class="md:text-lg text-sm text-[#7B7B7B]"
+                      >Remember me</label
+                    >
+                  </div>
+                  <a
+                    href="#"
+                    class="md:text-lg hidden md:block text-sm py-2 text-[#46C0A2] hover:underline cursor-pointer"
+                    >Forgot your password?</a
+                  >
+                </div>
+                <div class="flex justify-center items-center mt-3 md:mt-6">
+                  <button
+                    id="login"
+                    type="submit"
+                    class="py-4 bg rounded-2xl text-white font-semibold text-xl w-full cursor-pointer bg-[#46C0A2] hover:bg-[#3aa98b]"
+                  >
+                    Log In
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </dialog>
+      <!-- sign up form -->
+      <dialog id="my_modal_4" class="modal">
+        <div class="modal-box">
+          <form method="dialog">
+            <button
+              class="text-2xl font-bold absolute right-4 p-2 px-3.5 cursor-pointer border-transparent border rounded-full hover:border-[#46C0A2] hover:text-white hover-btn duration-500 top-2"
+            >
+              ✕
+            </button>
+          </form>
+          <div>
+            <h1 class="text-center text-4xl font-bold text-[#333333]">
+              Sign Up
+            </h1>
+            <p class="text-xl text-[#606060] text-center">
+              Already have an account?
+              <a href="#"
+                ><span class="text-[#46C0A2] hover:underline">Log in</span></a
+              >
+            </p>
+            <form action="#">
+              <div>
+                <label
+                  for="signup-name"
+                  class="text-lg text-[#7B7B7B] py-2 block"
+                  >Your Name</label
+                >
+                <input
+                  id="signup-name"
+                  class="w-full px-5 py-4 rounded-2xl outline-none border border-[#22bf98]"
+                  type="text"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="signup-email"
+                  class="text-lg text-[#7B7B7B] py-2 block"
+                  >Your Email Address</label
+                >
+                <input
+                  id="signup-email"
+                  class="w-full px-5 py-4 rounded-2xl outline-none border border-[#22bf98]"
+                  type="email"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="signup-mobile"
+                  class="text-lg text-[#7B7B7B] py-2 block"
+                  >Mobile Number</label
+                >
+                <input
+                  id="signup-mobile"
+                  class="w-full px-5 py-4 rounded-2xl outline-none border border-[#22bf98]"
+                  type="tel"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="signup-address"
+                  class="text-lg text-[#7B7B7B] py-2 block"
+                  >Home Address</label
+                >
+                <input
+                  id="signup-address"
+                  class="w-full px-5 py-4 rounded-2xl outline-none border border-[#22bf98]"
+                  type="text"
+                />
+              </div>
+              <div>
+                <label
+                  for="signup-password"
+                  class="text-lg text-[#7B7B7B] py-2 block"
+                  >Password</label
+                >
+                <input
+                  id="signup-password"
+                  class="w-full px-5 py-4 rounded-2xl outline-none border border-[#22bf98]"
+                  type="password"
+                  required
+                />
+              </div>
+              <div class="flex justify-center items-center mt-6">
+                <button
+                  type="submit"
+                  class="py-4 bg rounded-2xl text-white font-semibold text-xl w-full cursor-pointer bg-[#46C0A2] hover:bg-[#3aa98b]"
+                >
+                  Sign Up
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </dialog>
+      <!-- Mobile menu -->
+      <div
+        id="mobile-menu"
+        class="fixed top-0 right-[-100%] lg:hidden w-[70%] max-w-sm h-full bg bg-opacity-95 p-8 transition-all duration-500 ease-in-out z-50"
+      >
+        <i
+          id="close-icon"
+          class="fa-solid fa-xmark text-white text-3xl absolute top-5 right-6 cursor-pointer"
+        ></i>
+        <ul class="flex flex-col gap-2 text-white font-medium text-xl mt-10">
+          <li>
+            <a class="hover:text-[#89CE14] block py-2" href="../index.html"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a class="hover:text-[#89CE14] block py-2" href="services.html"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a class="hover:text-[#89CE14] block py-2" href="about.html"
+              >About us</a
+            >
+          </li>
+          <li>
+            <a class="hover:text-[#89CE14] block py-2" href="reat.html"
+              >Rates</a
+            >
+          </li>
+          <li>
+            <a class="hover:text-[#89CE14] block py-2" href="cost.html"
+              >Cost Calculator</a
+            >
+          </li>
+          <li>
+            <a class="hover:text-[#89CE14] block py-2" href="contact.html"
+              >Contact Us</a
+            >
+          </li>
+          <li class="mt-2 pt-6 border-t border-gray-700">
+            <button onclick="my_modal_4.showModal()"
+              class="w-full py-3 rounded-[38px] bg-[#89CE14] text-white font-semibold"
+            >
+              Sign Up
+            </button>
+          </li>
+          <li>
+            <button onclick="my_modal_3.showModal()"
+              class="w-full py-3 mt-2 rounded-[38px] border border-white text-white font-semibold"
+            >
+              Sign In
+            </button>
+          </li>
+          <li class="mt-2">
+            <img src="../images/logo.png" alt="" />
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <div class="flex justify-center items-center mt-20 md:mt-10">
+        <img
+          class="w-[100%] md:w-[40%] h-auto"
+          src="../images/dribbble_1.gif"
+          alt=""
+        />
+        <img
+          class="hidden w-[80%] md:w-[40%] h-auto"
+          src="../images/404.png"
+          alt=""
+        />
+      </div>
+      <div class="flex justify-center items-center pt-10">
+        <a href="../index.html">
+          <button
+            class="bg px-10 py-4 text-lg text-white font-medium flex gap-2 justify-center items-start rounded-[38px] cursor-pointer"
+          >
+            <i class="fa-solid fa-arrows-rotate mt-1"></i>
+            <p>Reload</p>
+          </button>
+        </a>
+      </div>
+    </main>
+  </body>
+  <script src="../script/script.js"></script>
+  <script src="../script/login.js"></script>
+</html>

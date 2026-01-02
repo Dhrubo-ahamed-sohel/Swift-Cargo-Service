@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swift Cargo Service Ltd.</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/png" href="../images/logo.png" />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- icon CDN -->
+    <script
+      src="https://kit.fontawesome.com/6cb37575c0.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--Tailwind CDN  -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- colors -->
+  </head>
+  <body class="roboto">
+    <header
+      class="bg-[url('../images/service.png')] object-cover object-top bg-cover header2 h-full relative"
+    >
+      <nav id="navbar"
+        class="fixed top-0 right-0 left-0 z-50 bg-black/10 flex justify-between items-center px-[7%] py-3 backdrop-blur-xl"
+      >
+      <!-- Logo -->
+        <div>
+          <a href="../index.html">
+            <img
+              class="h-[60px] cursor-pointer"
+              src="../images/logo.png"
+              alt="Logo"
+            />
+          </a>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden lg:block">
+          <ul
+            class="flex justify-between items-center gap-6 text-white font-medium text-lg"
+          >
+            <li>
+              <a class="hover:text-[#89CE14]" href="../index.html">Home</a>
+            </li>
+            <li>
+              <a class="hover:text-[#89CE14]" href="services.html">Services</a>
+            </li>
+            <li>
+              <a class="hover:text-[#89CE14]" href="about.html">About us</a>
+            </li>
+            <li><a class="hover:text-[#89CE14]" href="reat.html">Rates</a></li>
+            <li>
+              <a class="hover:text-[#89CE14]" href="cost.html"
+                >Cost Calculator</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-[#89CE14]" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <!-- Mobile menu bar -->
+        <div class="md:hidden">
+          <i
+            id="menu-icon"
+            class="fa-solid text-white text-3xl fa-bars cursor-pointer"
+          ></i>
+        </div>
+        <!-- sign up sign in button -->
+        <div class="hidden md:flex justify-between gap-3">
+          <button class="button bg" onclick="my_modal_4.showModal()">
+            Sign Up
+          </button>
+          <button
+            onclick="my_modal_3.showModal()"
+            class="bg-transparent button text hover-btn duration-500"
+          >
+            Sign In
+          </button>
+        </div>
+      </nav>
+      <!-- sign in form -->
+      <dialog id="my_modal_3" class="modal">
+        <div class="modal-box">
+          <form method="dialog" class="relative">
+            <button
+              class="text-2xl font-bold absolute -right-2 p-2 px-3.5 cursor-pointer border-transparent border rounded-full hover:border-[#46C0A2] hover:text-white hover-btn duration-500 -top-3"
+            >
+              ✕
+            </button>
+          </form>
+          <div>
+            <h1 class="text-center text-4xl font-bold text-[#333333]">
+              Log In
+            </h1>
+            <p class="text-xl text-[#606060] text-center">
+              Don't have an account?
+              <a href="#"
+                ><span class="text-[#46C0A2] hover:underline">Sign up</span></a
+              >
+            </p>
+            <form action="#">
+              <div>
+                <label
+                  for="login-email"
+                  class="text-lg text-[#7B7B7B] py-2 block"
+                  >Email address or user name</label
+                >
+                <input
+                  id="login-email"
+                  class="w-full px-5 py-4 rounded-2xl outline-none border border-[#22bf98]"
+                  type="text"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="login-password"
+                  class="text-lg text-[#7B7B7B] py-2 block"
+                  >Password</label
+                >
+                <input
+                  id="login-password"
+                  class="w-full px-5 py-4 rounded-2xl outline-none border border-[#22bf98]"
+                  type="password"
+                  required
+                />
+              </div>
+              <div>
+                <div class="flex justify-between items-center mt-2">
+                  <div class="flex gap-2 items-center">
+                    <input
+                      type="checkbox"
+                      id="remember-me"
+                      class="h-4 w-4"
+                      required
+                    />
+                    <label
+                      for="remember-me"
+                      class="md:text-lg text-sm text-[#7B7B7B]"
+                      >Remember me</label
+                    >
+                  </div>
+                  <a
+                    href="#"
+                    class="md:text-lg hidden md:block text-sm py-2 text-[#46C0A2] hover:underline cursor-pointer"
+                    >Forgot your password?</a
+                  >
+                </div>
+                <div class="flex justify-center items-center mt-3 md:mt-6">
+                  <button
+                    id="login"
+                    type="submit"
+                    class="py-4 bg rounded-2xl text-white font-semibold text-xl w-full cursor-pointer bg-[#46C0A2] hover:bg-[#3aa98b]"
+                  >
+                    Log In
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </dialog>
+      <!-- sign up form -->
+      <dialog id="my_modal_4" class="modal">
+        <div class="modal-box">
+          <form method="dialog">
+            <button
+              class="text-2xl font-bold absolute right-4 p-2 px-3.5 cursor-pointer border-transparent border rounded-full hover:border-[#46C0A2] hover:text-white hover-btn duration-500 top-2"
+            >
+              ✕
+            </button>
+          </form>
+          <div>
+            <h1 class="text-center text-4xl font-bold text-[#333333]">
+              Sign Up
+            </h1>
+            <p class="text-xl text-[#606060] text-center">
+              Already have an account?
+              <a href="#"
+                ><span class="text-[#46C0A2] hover:underline">Log in</span></a
+              >
+            </p>
+            <form action="#">
+              <div>
+                <label
+                  for="signup-name"
+                  class="text-lg text-[#7B7B7B] py-2 block"
+                  >Your Name</label
+                >
+                <input
+                  id="signup-name"
+                  class="w-full px-5 py-4 rounded-2xl outline-none border border-[#22bf98]"
+                  type="text"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="signup-email"
+                  class="text-lg text-[#7B7B7B] py-2 block"
+                  >Your Email Address</label
+                >
+                <input
+                  id="signup-email"
+                  class="w-full px-5 py-4 rounded-2xl outline-none border border-[#22bf98]"
+                  type="email"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="signup-mobile"
+                  class="text-lg text-[#7B7B7B] py-2 block"
+                  >Mobile Number</label
+                >
+                <input
+                  id="signup-mobile"
+                  class="w-full px-5 py-4 rounded-2xl outline-none border border-[#22bf98]"
+                  type="tel"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="signup-address"
+                  class="text-lg text-[#7B7B7B] py-2 block"
+                  >Home Address</label
+                >
+                <input
+                  id="signup-address"
+                  class="w-full px-5 py-4 rounded-2xl outline-none border border-[#22bf98]"
+                  type="text"
+                />
+              </div>
+              <div>
+                <label
+                  for="signup-password"
+                  class="text-lg text-[#7B7B7B] py-2 block"
+                  >Password</label
+                >
+                <input
+                  id="signup-password"
+                  class="w-full px-5 py-4 rounded-2xl outline-none border border-[#22bf98]"
+                  type="password"
+                  required
+                />
+              </div>
+              <div class="flex justify-center items-center mt-6">
+                <button
+                  type="submit"
+                  class="py-4 bg rounded-2xl text-white font-semibold text-xl w-full cursor-pointer bg-[#46C0A2] hover:bg-[#3aa98b]"
+                >
+                  Sign Up
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </dialog>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="fixed top-0 right-[-100%] lg:hidden w-[70%] max-w-sm h-full backdrop-blur-xl bg-opacity-95 p-8 transition-all duration-500 ease-in-out z-50"
+      >
+        <i
+          id="close-icon"
+          class="fa-solid fa-xmark text-white text-3xl absolute top-5 right-6 cursor-pointer"
+        ></i>
+        <ul class="flex flex-col gap-2 text-white font-medium text-xl mt-10">
+          <li>
+            <a class="hover:text-[#89CE14] block py-2" href="../index.html"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a class="hover:text-[#89CE14] block py-2" href="services.html"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a class="hover:text-[#89CE14] block py-2" href="about.html"
+              >About us</a
+            >
+          </li>
+          <li>
+            <a class="hover:text-[#89CE14] block py-2" href="reat.html"
+              >Rates</a
+            >
+          </li>
+          <li>
+            <a class="hover:text-[#89CE14] block py-2" href="cost.html"
+              >Cost Calculator</a
+            >
+          </li>
+          <li>
+            <a class="hover:text-[#89CE14] block py-2" href="contact.html"
+              >Contact Us</a
+            >
+          </li>
+          <li class="mt-2 pt-6 border-t border-gray-700">
+            <button onclick="my_modal_4.showModal()"
+              class="w-full py-3 rounded-[38px] bg-[#89CE14] text-white font-semibold"
+            >
+              Sign Up
+            </button>
+          </li>
+          <li>
+            <button onclick="my_modal_3.showModal()"
+              class="w-full py-3 mt-2 rounded-[38px] border border-white text-white font-semibold"
+            >
+              Sign In
+            </button>
+          </li>
+          <li class="mt-2">
+            <img src="../images/logo.png" alt="" />
+          </li>
+        </ul>
+      </div>
+
+      <!-- Header Content -->
+      <div class="flex justify-center items-center px-[7%]">
+        <div class="pt-[80%] md:py-[20%] w-[575px]">
+          <h1 class="text-center text-6xl font-bold text-white py-3">
+            Our Services
+          </h1>
+          <p class="text-center text-[20px] text-white pb-6">
+            Lorem ipsum dolor sit amet consectetur. Congue lacinia tempor orci
+            tellus sollicitudin morbi. Duis massa sit
+          </p>
+        </div>
+      </div>
+
+      <!-- WhatsApp Button -->
+      <div class="absolute right-10 md:right-36 bottom-30 md:bottom-40">
+        <a
+          href="https://wa.me/8801833597831?text=Hello!%20I%20have%20a%20question."
+          target="_blank"
+        >
+          <i
+            class="fa-brands fa-whatsapp text-3xl rounded-full text-white p-4 px-4.5 border cursor-pointer hover:shadow-lg border-[#89CE14] bg-[#89CE14]"
+          ></i>
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Section Start -->
+    <main class="">
+      <!-- Choose section start -->
+      <section class="px-[7%] py-12 md:py-[70px] bg-[#F9FAFC] md:px-[10%]">
+        <h1 class="text-center text-[#333333] font-bold text-4xl">
+          Our Shipping Services
+        </h1>
+        <p class="text-center mt-2.5 text-[#606060] text-xl">
+          Lorem ipsum dolor sit amet consectetur. Congue lacinia <br />tempor
+          orci tellus sollicitudin morbi. Duis
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+          <div
+            class="flex justify-center items-center flex-col card p-5 cursor-pointer"
+          >
+            <img src="../images/track.svg" alt="" />
+            <h1 class="text-[#606060] font-semibold text-xl py-2">
+              US Shipping
+            </h1>
+            <h2 class="text-base text-[#606060] mb-2 font-medium">
+              Ship from door to door in Barbados
+            </h2>
+            <p class="text-center text-[#606060] text-[14px]">
+              Lorem ipsum dolor sit amet consectetur. Ut a donec neque mattis
+              blandit fermentum id. Sagittis eu egestas
+            </p>
+            <div class="pt-2">
+              <button
+                class="bg-transparent w-[200px] button text hover-btn duration-500"
+              >
+                Select
+              </button>
+            </div>
+          </div>
+          <div
+            class="flex justify-center items-center flex-col card p-5 cursor-pointer"
+          >
+            <img src="../images/group-location.svg" alt="" />
+            <h1 class="text-[#606060] font-semibold text-xl py-2">
+              Local Shipping
+            </h1>
+            <h2 class="text-base text-[#606060] mb-2 font-medium">
+              Ship from door to door in Barbados
+            </h2>
+            <p class="text-center text-[#606060] text-[14px]">
+              Lorem ipsum dolor sit amet consectetur. Ut a donec neque mattis
+              blandit fermentum id. Sagittis eu egestas
+            </p>
+            <div class="pt-2">
+              <button
+                class="bg-transparent w-[200px] button text hover-btn duration-500"
+              >
+                Select
+              </button>
+            </div>
+          </div>
+          <div
+            class="flex justify-center items-center flex-col card p-5 cursor-pointer"
+          >
+            <img src="../images/loaction.svg" alt="" />
+            <h1 class="text-[#606060] font-semibold text-xl py-2">
+              Regional Shipping
+            </h1>
+            <h2 class="text-base text-[#606060] mb-2 font-medium">
+              Ship from door to door in Barbados
+            </h2>
+            <p class="text-center text-[#606060] text-[14px]">
+              Lorem ipsum dolor sit amet consectetur. Ut a donec neque mattis
+              blandit fermentum id. Sagittis eu egestas
+            </p>
+            <div class="pt-2">
+              <button
+                class="bg-transparent w-[200px] button text hover-btn duration-500"
+              >
+                Select
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Choose section end -->
+
+      <!-- Work Section start -->
+      <section class="px-[10%] py-12 md:py-[70px]">
+        <h1 class="text-center text-4xl font-bold text-[#333333]">
+          How It Work
+        </h1>
+        <p class="text-center text-[#606060] text-xl mt-2">
+          Lorem ipsum dolor sit amet consectetur. Congue lacinia <br />tempor
+          orci tellus sollicitudin morbi. Duis
+        </p>
+        <div class="relative">
+          <div
+            class="flex flex-col md:flex-row items-center mt-10 md:mt-0 gap-2"
+          >
+            <h1 class="p-4 px-5 bg rounded-full text-4xl text-white font-bold">
+              1.
+            </h1>
+            <div>
+              <h1
+                class="text-3xl font-bold bg-text text-transparent text-center md:text-start"
+              >
+                Free Sign Up
+              </h1>
+              <p class="text-lg text-[#606060] text-center md:text-start">
+                Lorem ipsum dolor sit amet consectetur. Parturient mattis mi
+                pretium <br />
+                phasellus adipiscing faucibus ut nec vel. Pellentesque ac
+                faucibus.
+              </p>
+            </div>
+          </div>
+          <hr class="w-full text-[#C0C0C0] my-3" />
+          <div class="flex flex-col md:flex-row items-center gap-2">
+            <h1
+              class="p-4 px-5 bg rounded-full text-4xl text-white font-bold text-center md:text-start"
+            >
+              2.
+            </h1>
+            <div>
+              <h1
+                class="text-3xl font-bold text-[#555555] text-center md:text-start"
+              >
+                Shop online
+              </h1>
+              <p class="text-lg text-[#606060] text-center md:text-start">
+                Lorem ipsum dolor sit amet consectetur. Parturient mattis mi
+                pretium <br />
+                phasellus adipiscing faucibus ut nec vel. Pellentesque ac
+                faucibus.
+              </p>
+            </div>
+          </div>
+          <hr class="w-full text-[#C0C0C0] my-3" />
+          <div class="flex flex-col md:flex-row items-center gap-2">
+            <h1
+              class="p-4 px-5 bg rounded-full text-4xl text-white font-bold text-center md:text-start"
+            >
+              3.
+            </h1>
+            <div>
+              <h1
+                class="text-3xl font-bold text-[#555555] text-center md:text-start"
+              >
+                Receive or pick up your packages
+              </h1>
+              <p class="text-lg text-[#606060] text-center md:text-start">
+                Lorem ipsum dolor sit amet consectetur. Parturient mattis mi
+                pretium <br />
+                phasellus adipiscing faucibus ut nec vel. Pellentesque ac
+                faucibus.
+              </p>
+            </div>
+          </div>
+          <hr class="w-full text-[#C0C0C0] my-3" />
+          <div class="flex flex-col md:flex-row items-center gap-2">
+            <h1
+              class="p-4 px-5 bg rounded-full text-4xl text-white font-bold text-center md:text-start"
+            >
+              4.
+            </h1>
+            <div>
+              <h1
+                class="text-3xl font-bold text-[#555555] text-center md:text-start"
+              >
+                Tips for you!
+              </h1>
+              <p class="text-lg text-[#606060] text-center md:text-start">
+                Lorem ipsum dolor sit amet consectetur. Parturient mattis mi
+                pretium <br />
+                phasellus adipiscing faucibus ut nec vel. Pellentesque ac
+                faucibus.
+              </p>
+            </div>
+          </div>
+          <hr class="w-full text-[#C0C0C0] my-3" />
+          <img
+            class="absolute top-15 hidden lg:block right-16 rounded-lg -rotate-15"
+            src="../images/work.png"
+            alt=""
+          />
+        </div>
+      </section>
+      <!-- Work Section End -->
+
+      <!-- section start -->
+      <section class="px-[7%] md:px-[10%] py-12 md:py-[70px] bg-[#F9FAFC]">
+        <h1 class="text-center text-4xl text-[#333333] font-bold">
+          Frequently asked question
+        </h1>
+        <p class="text-xl text-[#606060] py-2 text-center">
+          Lorem ipsum dolor sit amet consectetur. Congue lacinia <br />tempor
+          orci tellus sollicitudin morbi. Duis
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div
+            tabindex="0"
+            class="collapse collapse-plus bg-[#F1F6F2] border-base-300 border"
+          >
+            <div class="collapse-title font-medium text-[#606060] text-xl">
+              How do I create an account?
+            </div>
+            <div class="collapse-content text-lg text-gray-400">
+              Click the "Sign Up" button in the top right corner and follow the
+              registration process.
+            </div>
+          </div>
+          <div
+            tabindex="0"
+            class="collapse collapse-plus bg-[#F1F6F2] border-base-300 border"
+          >
+            <div class="collapse-title font-medium text-[#606060] text-xl">
+              How do I create an account?
+            </div>
+            <div class="collapse-content text-lg text-gray-400">
+              Click the "Sign Up" button in the top right corner and follow the
+              registration process.
+            </div>
+          </div>
+          <div
+            tabindex="0"
+            class="collapse collapse-plus bg-[#F1F6F2] border-base-300 border"
+          >
+            <div class="collapse-title font-medium text-[#606060] text-xl">
+              Lorem ipsum dolor sit amet consectetur. Pretium tortor in eros?
+            </div>
+            <div class="collapse-content text-lg text-gray-400">
+              Click the "Sign Up" button in the top right corner and follow the
+              registration process.
+            </div>
+          </div>
+          <div
+            tabindex="0"
+            class="collapse collapse-plus bg-[#F1F6F2] border-base-300 border"
+          >
+            <div class="collapse-title font-medium text-[#606060] text-xl">
+              Lorem ipsum dolor sit amet consectetur?
+            </div>
+            <div class="collapse-content text-lg text-gray-400">
+              Click the "Sign Up" button in the top right corner and follow the
+              registration process.
+            </div>
+          </div>
+          <div
+            tabindex="0"
+            class="collapse collapse-plus bg-[#F1F6F2] border-base-300 border"
+          >
+            <div class="collapse-title font-medium text-[#606060] text-xl">
+              Lorem ipsum dolor sit amet consectetur. Tempus ornare ut lorem
+              dignissim fringilla?
+            </div>
+            <div class="collapse-content text-lg text-gray-400">
+              Click the "Sign Up" button in the top right corner and follow the
+              registration process.
+            </div>
+          </div>
+          <div
+            tabindex="0"
+            class="collapse collapse-plus bg-[#F1F6F2] border-base-300 border"
+          >
+            <div class="collapse-title font-medium text-[#606060] text-xl">
+              Lorem ipsum dolor sit amet consectetur. Pellentesque vestibulum?
+            </div>
+            <div class="collapse-content text-lg text-gray-400">
+              Click the "Sign Up" button in the top right corner and follow the
+              registration process.
+            </div>
+          </div>
+          <div
+            tabindex="0"
+            class="collapse collapse-plus bg-[#F1F6F2] border-base-300 border"
+          >
+            <div class="collapse-title font-medium text-[#606060] text-xl">
+              Lorem ipsum dolor sit amet consectetur. Quis id vitae consectetur
+              urna?
+            </div>
+            <div class="collapse-content text-lg text-gray-400">
+              Click the "Sign Up" button in the top right corner and follow the
+              registration process.
+            </div>
+          </div>
+          <div
+            tabindex="0"
+            class="collapse collapse-plus bg-[#F1F6F2] border-base-300 border"
+          >
+            <div class="collapse-title font-medium text-[#606060] text-xl">
+              Lorem ipsum dolor sit amet consectetur. Sit amet pellentesque id
+              at eget?
+            </div>
+            <div class="collapse-content text-lg text-gray-400">
+              Click the "Sign Up" button in the top right corner and follow the
+              registration process.
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- section end -->
+      <!-- Sign up section start -->
+      <section class="px-[7%] md:px-[10%] py-12 md:py-[70px] relative">
+        <div
+          class="md:py-[120px] py-14 bg rounded-3xl flex justify-between items-center flex-col"
+        >
+          <h1
+            class="text-4xl font-bold text-white py-3 text-center md:text-start"
+          >
+            Hassle-Free Shipping, Every Time
+          </h1>
+          <p class="text-base text-white text-center">
+            Inscreva-se em nossa newsletter e tenha acesso exclusivo a conteúdos
+            educacionais, dicas de <br />
+            aprendizado de idiomas, atualizações sobre novos cursos e promoções
+            especiais.
+          </p>
+          <div class="pt-7">
+            <button
+              class="py-3 px-8 cursor-pointer rounded-[38px] text-white text-lg font-medium last-btn"
+              onclick="my_modal_4.showModal()"
+            >
+              Sign Up For Free
+            </button>
+          </div>
+          <div
+            class="h-[200px] hidden md:block w-[200px] border border-white rounded-full absolute left-20 -bottom-2"
+          ></div>
+          <div
+            class="h-[250px] hidden md:block w-[250px] border border-white rounded-full absolute left-20 -bottom-2"
+          ></div>
+          <div
+            class="h-[230px] hidden md:block w-[230px] border border-white rounded-full absolute left-20 -bottom-2"
+          ></div>
+          <div
+            class="h-[275px] hidden md:block w-[275px] border border-white rounded-full absolute left-20 -bottom-2"
+          ></div>
+          <div
+            class="h-[300px] hidden md:block w-[300px] border border-white rounded-full absolute left-20 -bottom-2"
+          ></div>
+          <div
+            class="h-[325px] hidden md:block w-[325px] border border-white rounded-full absolute left-20 -bottom-2"
+          ></div>
+          <div
+            class="h-[200px] hidden md:block w-[200px] border border-white rounded-full absolute right-20 -top-2"
+          ></div>
+          <div
+            class="h-[250px] hidden md:block w-[250px] border border-white rounded-full absolute right-20 -top-2"
+          ></div>
+          <div
+            class="h-[230px] hidden md:block w-[230px] border border-white rounded-full absolute right-20 -top-2"
+          ></div>
+          <div
+            class="h-[275px] hidden md:block w-[275px] border border-white rounded-full absolute right-20 -top-2"
+          ></div>
+          <div
+            class="h-[300px] hidden md:block w-[300px] border border-white rounded-full absolute right-20 -top-2"
+          ></div>
+          <div
+            class="h-[325px] hidden md:block w-[325px] border border-white rounded-full absolute right-20 -top-2"
+          ></div>
+        </div>
+      </section>
+      <!-- Sign up section end -->
+    </main>
+    <!-- Main Section End -->
+    <!-- Footer -->
+    <footer
+      class="px-[7%] md:px-[10%] py-12 md:py-[70px] last-btn mt-5 gap-8 flex flex-col lg:flex-row justify-between"
+    >
+      <div>
+        <div class="flex justify-center md:justify-start">
+          <img class="h-[80px] w-auto" src="../images/logo.png" alt="" />
+        </div>
+        <p
+          class="md:w-[350px] text-white pt-2 text-lg text-center md:text-start"
+        >
+          Lorem ipsum dolor sit amet consectetur. Neque consequat tristique
+          bibendum facilisis odio congue enim. Tempor justo proin faucibus
+          praesent ac. Dui nunc sit aliquam eget adipiscing feugiat turpis. Ut
+          eleifend blandit suspendisse sollicitudin amet dictum mauris.
+        </p>
+      </div>
+      <div>
+        <h1
+          class="text-2xl font-bold bg-text text-transparent text-center md:text-start"
+        >
+          Support
+        </h1>
+        <ul class="flex mt-5 text-lg text-white justify-between flex-col gap-3">
+          <a class="text-center md:text-start hover:underline" href="404.html"
+            ><li>FAQ</li></a
+          >
+          <a class="text-center md:text-start hover:underline" href="404.html"
+            ><li>return & Exchange</li></a
+          >
+          <a class="text-center md:text-start hover:underline" href="reat.html"
+            ><li>Shipping</li></a
+          >
+          <a
+            class="text-center md:text-start hover:underline"
+            href="benifit.html"
+            ><li>Brand</li></a
+          >
+          <a class="text-center md:text-start hover:underline" href="404.html"
+            ><li>Review</li></a
+          >
+          <a class="text-center md:text-start hover:underline" href="404.html"
+            ><li>Help</li></a
+          >
+        </ul>
+      </div>
+      <div>
+        <h1
+          class="text-2xl font-bold bg-text text-transparent text-center md:text-start"
+        >
+          Company
+        </h1>
+        <ul class="flex mt-5 text-lg text-white justify-between flex-col gap-3">
+          <a
+            class="text-center md:text-start hover:underline"
+            href="services.html"
+            ><li>Services</li></a
+          >
+          <a
+            class="text-center md:text-start hover:underline"
+            href="resticate.html"
+            ><li>Restricter Items</li></a
+          >
+          <a class="text-center md:text-start hover:underline" href="404.html"
+            ><li>Terms & Conditions</li></a
+          >
+          <a class="text-center md:text-start hover:underline" href="404.html"
+            ><li>Privacy Policy</li></a
+          >
+          <a class="text-center md:text-start hover:underline" href="blog.html"
+            ><li>Blog</li></a
+          >
+          <a
+            class="text-center md:text-start hover:underline"
+            href="contact.html"
+            ><li>Contact Us</li></a
+          >
+        </ul>
+      </div>
+      <div>
+        <h1
+          class="text-2xl font-bold bg-text text-transparent text-center md:text-start"
+        >
+          Join a Newsletter
+        </h1>
+        <p class="mt-5 text-lg text-white text-center md:text-start">
+          Your Email
+        </p>
+        <div class="flex justify-between items-center relative my-4">
+          <input
+            type="text"
+            class="py-5 w-[350px] border border-[#89CE14] placeholder:text-[#89CE14] rounded-[38px] px-5 bg-white outline-none"
+            placeholder="Enter Your Email"
+            name=""
+            id=""
+          />
+          <button class="absolute button bg right-1">Subscrube</button>
+        </div>
+        <div class="flex justify-center md:justify-start gap-6">
+          <a
+            href="https://www.facebook.com/profile.php?id=61554300737206"
+            target="_blank"
+            ><i
+              class="fa-brands fa-facebook-f px-4 cursor-pointer hover:bg-[#89CE14] duration-500 p-3 border-[#89CE14] text-white text-2xl border rounded-full"
+            ></i
+          ></a>
+          <a href="https://www.instagram.com/debnathnobodip/" target="_blank"
+            ><i
+              class="fa-brands fa-instagram cursor-pointer hover:bg-[#89CE14] duration-500 p-3 border-[#89CE14] text-white text-2xl border rounded-full"
+            ></i
+          ></a>
+          <a href="https://x.com/DebnathD46507" target="_blank"
+            ><i
+              class="fa-brands fa-twitter cursor-pointer hover:bg-[#89CE14] duration-500 p-3 border-[#89CE14] text-white text-2xl border rounded-full"
+            ></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer -->
+  </body>
+  <script src="../script/script.js"></script>
+  <script src="../script/login.js"></script>
+</html>
